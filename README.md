@@ -16,11 +16,13 @@ JavaScript is used to generate extra markup. The CSS can then be customised by y
 The original input element is hidden and classes are applied directly to the label element for styling.
 
 ### Selectboxes
-The original select element is hidden and new markup is generated
+The original select element is hidden and new markup is generated.
+
 
 
 ## Extra features
 * Option to clear a radio group by re-clicking/touching the currently checked option.
+* Selectboxes can be configured to load options in a large modal dialog.
 
 
 ## Browser Support
@@ -39,3 +41,4 @@ The original select element is hidden and new markup is generated
 * Shadow DOM
 * WAI ARIA
 * Better browser support
+* Selectbox controls
