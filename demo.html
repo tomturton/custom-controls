@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/custom-controls.css">
+
+	<style>
+		html, body, .container { height: 100%; }
+		/*body { background-color: #09f; }*/
+	</style>
+</head>
+
+
+<body>
+
+<div class="container">
+	
+	<fieldset>
+		<legend>Favourite character from Hook</legend>
+
+		<input type="radio" id="char-0" name="char" value="Hook">
+		<label for="char-0">Hook</label>
+
+		<input type="radio" id="char-1" name="char" value="Smee">
+		<label for="char-1">Smee</label>
+
+		<label for="char-2">Pan</label>
+		<input type="radio" id="char-2" name="char" value="Pan">
+
+		<label>
+			<input type="radio" name="char" value="Rufio">
+			Rufio
+		</label>
+	</fieldset>
+	
+	
+	<fieldset>
+		<legend>Favourite foods</legend>
+		<p class="instruction">Select all that apply</p>
+		
+		<input type="checkbox" id="food-0" name="food[]" value="Cheese">
+		<label for="food-0">Cheese</label>
+		
+		<input type="checkbox" id="food-1" name="food[]" value="Roast Lamb">
+		<label for="food-1">Roast Lamb</label>
+		
+		<label for="food-2">Fish 'n' Chips</label>
+		<input type="checkbox" id="food-2" name="food[]" value="Fish 'n' Chips">
+		
+		<label>
+			<input type="checkbox" name="food[]" value="Crispy Aromatic Duck">
+			Crispy Aromatic Duck
+		</label>
+
+	</fieldset>
+
+	
+	<!--<fieldset>
+		<legend>Normal select</legend>
+
+		<label for="title">Title</label>
+		<select id="title" name="title">
+			<option value="Mr">Mr</option>
+			<option value="Mrs">Mrs</option>
+			<option value="Miss">Miss</option>
+			<option value="Ms">Ms</option>
+			<option value="Dr">Dr</option>
+			<option value="Prof">Prof</option>
+		</select>
+	</fieldset>
+
+	<fieldset>
+		<legend>Full screen select menu</legend>
+
+		<label for="song">Favourite Lion King song</label>
+		<select id="song" name="song" data-mode="fullscreen">
+			<optgroup label="Act 1">
+				<option value="Circle of Life">Circle of Life</option>
+				<option value="I Just Can't Wait to be King">I Just Can't Wait to be King</option>
+				<option value="Be Prepared">Be Prepared</option>
+			</optgroup>
+			<optgroup label="Act 2">
+				<option value="Hakuna Matata">Hakuna Matata</option>
+				<option value="Can You Feel The Love Tonight">Can You Feel The Love Tonight</option>
+			</optgroup>
+		</select>
+	</fieldset>-->
+	
+	<button type="button" data-toggle="off">Enable plugin</button>
+
+</div> <!--/container-->
+
+
+<script src="js/custom-controls.js"></script>
+<script>
+(function () {
+	var inputs = document.querySelectorAll('input'), // 'input, select'
+		cc;
+
+	document.querySelector('button').onclick = function () {
+		if (this.getAttribute('data-toggle') === 'off') {
+			cc = CustomControls(inputs);
+			this.innerHTML = 'Disable plugin';
+			this.setAttribute('data-toggle', 'on');
+			
+		} else {
+			cc.destroy();
+			this.innerHTML = 'Enable plugin';
+			this.setAttribute('data-toggle', 'off');
+		}
+	}
+
+})();
+</script>
+
+</body>

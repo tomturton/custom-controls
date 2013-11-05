@@ -1,0 +1,32 @@
+.cc_radio, .cc_checkbox {
+	display: inline-block;
+	border-radius: 10px;
+	background-color: purple;
+	padding: 10px 12px;
+
+	&.checked {
+		
+	}
+
+	&.disabled {
+		background-color: #ccc;
+		color: #666;
+	}
+}
+
+.cc_radio {
+	background-color: purple;
+	color: white;
+
+	&.checked {
+		background-color: orange;
+	}
+}
+.cc_checkbox {
+	background-color: indigo;
+	color: white;
+
+	&.checked {
+		background-color: orange;
+	}
+}
