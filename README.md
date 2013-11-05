@@ -1,4 +1,4 @@
-# Custom Controls
+# Custom Web Controls
 
 ## What is it?
 A way of customising the look and function of radio, checkbox and selectbox controls.
