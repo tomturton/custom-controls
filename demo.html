@@ -23,19 +23,23 @@
 	<fieldset>
 		<legend>Favourite character from Hook</legend>
 
-		<input type="radio" id="char-0" name="char" value="Hook">
-		<label for="char-0">Hook</label>
+		<label for="peterpan">Peter</label>
 
-		<input type="radio" id="char-1" name="char" value="Smee">
-		<label for="char-1">Smee</label>
+		<input type="radio" id="hook" name="char" value="Hook">
+		<label for="hook">Hook</label>
 
-		<label for="char-2">Pan</label>
-		<input type="radio" id="char-2" name="char" value="Pan">
+		<input type="radio" id="smee" name="char" value="Smee" disabled>
+		<label for="smee">Smee</label>
 
-		<label>
+		<label for="peterpan">Pan</label>
+		<input type="radio" id="peterpan" name="char" value="Pan">
+
+		<!-- <label>
 			<input type="radio" name="char" value="Rufio">
 			Rufio
-		</label>
+		</label> -->
+
+		<input type="radio" name="char" value="Wendy">
 	</fieldset>
 	
 	
@@ -50,12 +54,14 @@
 		<label for="food-1">Roast Lamb</label>
 		
 		<label for="food-2">Fish 'n' Chips</label>
-		<input type="checkbox" id="food-2" name="food[]" value="Fish 'n' Chips">
+		<input type="checkbox" id="food-2" name="food[]" value="Fish 'n' Chips" disabled>
 		
-		<label>
+		<!-- <label>
 			<input type="checkbox" name="food[]" value="Crispy Aromatic Duck">
 			Crispy Aromatic Duck
-		</label>
+		</label> -->
+
+		<input type="checkbox" name="food[]" value="Bangers and Mash">
 
 	</fieldset>
 
@@ -96,24 +102,24 @@
 </div> <!--/container-->
 
 
-<script src="js/custom-controls.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="js/jquery-custom-web-controls.js"></script>
 <script>
 (function () {
-	var inputs = document.querySelectorAll('input'), // 'input, select'
-		cc;
+	var $inputs = $('input'); // 'input, select'
 
-	document.querySelector('button').onclick = function () {
+	$('button').on('click', function () {
 		if (this.getAttribute('data-toggle') === 'off') {
-			cc = CustomControls(inputs);
-			this.innerHTML = 'Disable plugin';
+			$inputs.customWebControls();
+			this.innerText = 'Disable plugin';
 			this.setAttribute('data-toggle', 'on');
 			
 		} else {
-			cc.destroy();
-			this.innerHTML = 'Enable plugin';
+			$inputs.customWebControls('destroy');
+			this.innerText = 'Enable plugin';
 			this.setAttribute('data-toggle', 'off');
 		}
-	}
+	});
 
 })();
 </script>

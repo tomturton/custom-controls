@@ -1,4 +1,4 @@
-# Custom Controls
+# Custom Web Controls
 
 ## What is it?
 A way of customising the look and function of radio, checkbox and selectbox controls.
@@ -12,8 +12,13 @@ This is particularly annoying when developing for touchscreen devices that do no
 ## How does it work?
 JavaScript is used to generate extra markup. The CSS can then be customised by you.
 
+
 ### Radios & checkboxes
-The original input element is hidden and classes are applied directly to the label element for styling.
+The original input element and labels are hidden. In place of each label, new markup is generated with classes representing type and state, for custom styling.
+The advantage of having new markup instead of styling labels are:
+* Input elements without labels can be styled (useful for matrix-grid questions).
+* Allows radios to be deselected (see 'Extra features' below).
+
 
 ### Selectboxes
 The original select element is hidden and new markup is generated.
@@ -25,10 +30,8 @@ The original select element is hidden and new markup is generated.
 * Selectboxes can be configured to load options in a large modal dialog.
 
 
-## Browser Support
-* Chrome
-* Firefox
-* IE10+ (Issues: forEach, indexOf, classList, getComputedStyle)
+## IE Support
+* IE8+
 
 
 ## Instructions
@@ -40,5 +43,4 @@ The original select element is hidden and new markup is generated.
 ## To-do
 * Shadow DOM
 * WAI ARIA
-* Better browser support
 * Selectbox controls
