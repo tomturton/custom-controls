@@ -194,6 +194,9 @@
 				classes[1] = 'cc_empty';
 				content    = '';
 			}
+			if (!!this.el.disabled) {
+				classes.push('cc_disabled');
+			}
 			
 			return '<div data-cc_for="' + this.id + '" class="' + classes.join(' ') + '">' + content + '</div>';
 		},
@@ -203,14 +206,16 @@
 		toggle: function (e) {
 			console.log('Switch.toggle()');
 
-			if (!e.data.el.checked) {
-				e.data.el.checked = true;
+			if (!e.data.el.disabled) {
+				if (!e.data.el.checked) {
+					e.data.el.checked = true;
 
-			} else { // elseif (allowDeselect) {
-				e.data.el.checked = false;
+				} else { // elseif (allowDeselect && ) {
+					e.data.el.checked = false;
+				}
+
+				$(e.data.el).trigger('change', { el: e.data.el, name: e.data.name });
 			}
-
-			$(e.data.el).trigger('change', { el: e.data.el, name: e.data.name });
 		},
 
 
