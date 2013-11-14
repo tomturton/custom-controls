@@ -20,7 +20,7 @@ If there is no label associated with the input element, the new markup is create
 #### Note
 An HTML inside label elements will be copied to the custom label. Consequently, do not nest the input inside its label element.
 
-custom-web-controlsI.e. this is not recommended:
+I.e. this is not recommended:
 
 ```html
 <label>
