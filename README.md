@@ -1,7 +1,7 @@
 # Custom Web Controls
 
 ## What is it?
-A way of customising the look and function of radio, checkbox and selectbox controls.
+A jQuery plugin to customise the look and function of radio, checkbox and selectbox controls.
 
 
 ## Why?
@@ -15,10 +15,19 @@ JavaScript is used to generate extra markup. The CSS can then be customised by y
 
 ### Radios & checkboxes
 The original input element and labels are hidden. In place of each label, new markup is generated with classes representing type and state, for custom styling.
-The advantage of having new markup instead of styling labels are:
-* Input elements without labels can be styled (useful for matrix-grid questions).
-* Allows radios to be deselected (see 'Extra features' below).
+If there is no label associated with the input element, the new markup is created in place of the input element.
 
+#### Note
+An HTML inside label elements will be copied to the custom label. Consequently, do not nest the input inside its label element.
+
+custom-web-controlsI.e. this is not recommended:
+
+```html
+<label>
+    Star Wars
+    <input type="radio" name="fave_film" value="Star Wars" />
+</label>
+```
 
 ### Selectboxes
 The original select element is hidden and new markup is generated.
@@ -30,17 +39,22 @@ The original select element is hidden and new markup is generated.
 * Selectboxes can be configured to load options in a large modal dialog.
 
 
-## IE Support
-* IE8+
+## Dependancies
+* A good browser, or IE8+
+* jQuery v1.7+
 
 
 ## Instructions
 1. Clone/download the library
-2. Update `css/custom-controls.scss` with your customisations
-3. Compile Sass and include in your project, along with `js/custom-controls.min.js`
+2. Update `css/jquery-custom-controls.scss` with your customisations
+3. Compile Sass and include in your project, along with `js/jquery-custom-controls.min.js`
+4. Run plugin script on radios, checkboxes and select elements you want to customise. `$('input, select').customControls();`
 
 
-## To-do
-* Shadow DOM
-* WAI ARIA
-* Selectbox controls
+## Progress
+- [x] Design as jQuery plugin
+- [x] Radio/checkbox controls
+- [ ] Selectbox controls
+- [ ] Create usable demo
+- [ ] WAI ARIA
+- [ ] Web components (?)
