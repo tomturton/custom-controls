@@ -17,6 +17,22 @@ JavaScript is used to generate extra markup. The CSS can then be customised by y
 The original input element and labels are hidden. In place of each label, new markup is generated with classes representing type and state, for custom styling.
 If there is no label associated with the input element, the new markup is created in place of the input element.
 
+#### Classes
+You can identify and style the custom controls with these classes:
+
+| Class       | Type/State of control   |
+| ----------- | ----------------------- |
+| cc_radio    | Radio control           |
+| cc_checkbox | Checkbox control        |
+| cc_empty    | Control without a label |
+| cc_checked  | Control is checked      |
+| cc_disabled | Control is disabled     |
+
+So, to style a checked radio control with no label, just apply CSS to the following selector:
+```css
+.cc_radio.cc_empty.cc_checked`
+```
+
 #### Note
 An HTML inside label elements will be copied to the custom label. Consequently, do not nest the input inside its label element.
 
