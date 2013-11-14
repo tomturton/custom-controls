@@ -28,9 +28,11 @@ You can identify and style the custom controls with these classes:
 | cc_checked  | Control is checked      |
 | cc_disabled | Control is disabled     |
 
-So, to style a checked radio control with no label, just apply CSS to the following selector:
+So, to apply a red background to checked radio controls with no label:
 ```css
-.cc_radio.cc_empty.cc_checked`
+.cc_radio.cc_empty.cc_checked {
+    background-color: red
+}
 ```
 
 #### Note
